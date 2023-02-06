@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+    <title>vue</title>
+
+    <style>
+        
+    </style>
+</head>
+<body class="h-full grid place-items-center">
+    <div id="app">
+        <app-button type="primary" processing="true">
+            <p>Submit</p>
+        </app-button>
+    </div>
+
+    <script type="module">
+        import App from '../js/components/App.js'
+        Vue.createApp(App).mount('#app')
+    </script>
+</body>
+</html>
