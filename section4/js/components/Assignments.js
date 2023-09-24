@@ -8,16 +8,33 @@ export default {
     },
 
     template: `
-        <assignment-list :assignments="filters.inProgress" title="In Progress"></assignment-list>
-        <assignment-list :assignments="filters.completed" title="Completed"></assignment-list>
+        <div class="flex gap-8">
+            <assignment-list
+                :assignments="filters.inProgress"
+                title="In Progress"
+            >
+                <assignment-create @add="add"></assignment-create>
+            </assignment-list>
 
-        <assignment-create @add="add"></assignment-create>
+            <div v-if="showList">
+                <assignment-list
+                    :assignments="filters.completed"
+                    title="Completed"
+                    can-toggle=true
+                    @toggle="showList = !showList"
+                >
+                    <assignment-create @add="add"></assignment-create>
+                </assignment-list>
+            </div>
+        </div>
+
     `,
 
     data() {
         return {
             assignments: [],
             newAssignment: '',
+            showList: true,
         }
     },
 
