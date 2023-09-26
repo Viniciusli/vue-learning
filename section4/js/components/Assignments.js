@@ -26,6 +26,8 @@ export default {
                     <assignment-create @add="add"></assignment-create>
                 </assignment-list>
             </div>
+
+            
         </div>
 
     `,
